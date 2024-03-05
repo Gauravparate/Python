@@ -1,9 +1,23 @@
-def Indian_Currency(Number):
-    num_str = str(Number)
-    num_str = num_str[::-1]
-    digit = [num_str[i:i+2] for i in range(0, len(num_str), 2)]
-    result = ",".join(digit)[::-1]
-    return result
-input = 50467
-output = Indian_Currency(input)
-print(f"Input: {input}\nOutput: {output}")
+
+def indian_currency_notation(n):
+    # Convert integer to string and reverse it
+    s = str(n)[::-1]
+    
+    # Initialize result
+    result = ''
+    
+    # Loop through the reversed string
+    for i in range(len(s)):
+        # Append comma after every 2 digits
+        if i % 2 == 0 and i != 0:
+            result += ','
+        # Append current digit
+        result += s[i]
+    
+    # Reverse the result to get the correct order
+    return result[::-1]
+
+# Example usage
+number = 50467
+print("Input:", number)
+print("Output:", indian_currency_notation(number))
