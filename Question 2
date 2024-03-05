@@ -1,4 +1,4 @@
-def minimum_players_to_get_shot(t, test_cases):
+def minimum_players(t, test_cases):
     results = []
 
     for case in test_cases:
@@ -14,15 +14,17 @@ def minimum_players_to_get_shot(t, test_cases):
 
     return results
 
-num_test_cases = int(input("Enter the number of test cases: "))
+# Input reading
+test_cases_number = int(input("Enter the number of test cases: "))
 test_cases = []
 
-for _ in range(num_test_cases):
+for _ in range(test_cases_number):
     n, k = map(int, input().split())
     heights = list(map(int, input().split()))
     test_cases.append((n, k, heights))
 
-output = minimum_players_to_get_shot(num_test_cases, test_cases)
+# output results
+output = minimum_players(test_cases_number, test_cases)
 
 for result in output:
     print(result)
